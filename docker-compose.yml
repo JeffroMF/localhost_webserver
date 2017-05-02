@@ -1,0 +1,11 @@
+version: "3.0"
+services:
+  nginx:
+    image: localhost_webserver
+    container_name: localhost_webserver
+    ports: 
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./server_blocks/:/etc/nginx/sites-enabled/:ro
+      - /Sites:/var/www/html/
